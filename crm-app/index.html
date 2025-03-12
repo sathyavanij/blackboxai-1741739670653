@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg">
+        <div class="flex items-center justify-center h-16 bg-blue-600">
+            <h1 class="text-white text-xl font-inter font-bold">CRM Dashboard</h1>
+        </div>
+        <nav class="mt-6">
+            <div class="px-4 space-y-2">
+                <button class="flex items-center w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-lg active" data-section="dashboard">
+                    <i class="fas fa-home mr-3"></i>
+                    Dashboard
+                </button>
+                <button class="flex items-center w-full px-4 py-2 text-gray-600 rounded-lg hover:bg-gray-100" data-section="customers">
+                    <i class="fas fa-users mr-3"></i>
+                    Customers
+                </button>
+                <button class="flex items-center w-full px-4 py-2 text-gray-600 rounded-lg hover:bg-gray-100" data-section="sales">
+                    <i class="fas fa-chart-line mr-3"></i>
+                    Sales
+                </button>
+                <button class="flex items-center w-full px-4 py-2 text-gray-600 rounded-lg hover:bg-gray-100" data-section="reports">
+                    <i class="fas fa-file-alt mr-3"></i>
+                    Reports
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-64 p-8">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="active-section">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <div class="p-3 bg-blue-100 rounded-full">
+                            <i class="fas fa-users text-blue-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-gray-500 text-sm">Total Customers</h3>
+                            <p class="text-2xl font-semibold">1,482</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <div class="p-3 bg-green-100 rounded-full">
+                            <i class="fas fa-dollar-sign text-green-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-gray-500 text-sm">Revenue</h3>
+                            <p class="text-2xl font-semibold">$42,500</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <div class="p-3 bg-purple-100 rounded-full">
+                            <i class="fas fa-tasks text-purple-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-gray-500 text-sm">Tasks</h3>
+                            <p class="text-2xl font-semibold">64</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center">
+                        <div class="p-3 bg-red-100 rounded-full">
+                            <i class="fas fa-clock text-red-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-gray-500 text-sm">Pending</h3>
+                            <p class="text-2xl font-semibold">12</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4">Recent Activities</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <p class="ml-3 text-sm text-gray-600">New customer added: John Doe</p>
+                            <span class="ml-auto text-xs text-gray-400">2h ago</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <p class="ml-3 text-sm text-gray-600">Deal closed with ABC Corp</p>
+                            <span class="ml-auto text-xs text-gray-400">5h ago</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                            <p class="ml-3 text-sm text-gray-600">Meeting scheduled with client</p>
+                            <span class="ml-auto text-xs text-gray-400">1d ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4">Quick Actions</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button class="p-4 bg-blue-50 rounded-lg text-blue-600 hover:bg-blue-100">
+                            <i class="fas fa-user-plus mb-2"></i>
+                            <p class="text-sm">Add Customer</p>
+                        </button>
+                        <button class="p-4 bg-purple-50 rounded-lg text-purple-600 hover:bg-purple-100">
+                            <i class="fas fa-calendar-plus mb-2"></i>
+                            <p class="text-sm">Schedule Meeting</p>
+                        </button>
+                        <button class="p-4 bg-green-50 rounded-lg text-green-600 hover:bg-green-100">
+                            <i class="fas fa-file-invoice-dollar mb-2"></i>
+                            <p class="text-sm">Create Invoice</p>
+                        </button>
+                        <button class="p-4 bg-yellow-50 rounded-lg text-yellow-600 hover:bg-yellow-100">
+                            <i class="fas fa-chart-bar mb-2"></i>
+                            <p class="text-sm">View Reports</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customers Section -->
+        <section id="customers" class="hidden">
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-semibold">Customer Management</h2>
+                    <button id="addCustomerBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                        <i class="fas fa-plus mr-2"></i>Add Customer
+                    </button>
+                </div>
+
+                <div class="mb-4">
+                    <div class="relative">
+                        <input type="text" id="searchCustomer" placeholder="Search customers..." 
+                               class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="bg-gray-50">
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Company</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customerTableBody">
+                            <!-- Customer rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sales Section -->
+        <section id="sales" class="hidden">
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h2 class="text-xl font-semibold mb-4">Sales Overview</h2>
+                <p class="text-gray-600">Sales analytics and reporting coming soon...</p>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports" class="hidden">
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h2 class="text-xl font-semibold mb-4">Reports</h2>
+                <p class="text-gray-600">Report generation features coming soon...</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Customer Modal -->
+    <div id="customerModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg w-full max-w-md p-6">
+            <h3 class="text-lg font-semibold mb-4">Add New Customer</h3>
+            <form id="customerForm">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="customerName" required
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="customerEmail" required
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Phone</label>
+                        <input type="tel" id="customerPhone" required
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Company</label>
+                        <input type="text" id="customerCompany" required
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end space-x-3">
+                    <button type="button" id="cancelCustomerBtn" 
+                            class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+                        Cancel
+                    </button>
+                    <button type="submit" 
+                            class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                        Save Customer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
